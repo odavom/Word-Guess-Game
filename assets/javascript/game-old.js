@@ -23,7 +23,7 @@ function hiddenName() {
    document.getElementById('currentName').innerHTML = correctLetters.join(' ');
 }
 
-/* this creates a function event where the key pressed is stored in the userGuess as lower case. If the remaining guesses does not equal 0. And if */
+/* t*/
 document.onkeyup = function(event) {
     let userGuess = event.key.toLowerCase();
     if(remainingGuesses != 0){
@@ -36,7 +36,7 @@ document.onkeyup = function(event) {
     document.getElementById('remainingGuessesSpan').innerHTML = remainingGuesses;
     checkLetter(userGuess);
     } else {
-        alert("letter already used")
+        alert("you already guessed")
     }
 }else {
     alert ("GAme over");

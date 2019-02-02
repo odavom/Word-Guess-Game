@@ -9,17 +9,27 @@
 
 </head>
 <body>
-    <h1>Dante's Inferno <br> HANGMAN</h1>
-    <div>
+    <!-- headingContainer -->
+    <div class="containerHeading"> 
+        <h1>::Characters of Dante's Inferno Hangman::</h1>
+    </div>
+    <!-- contentContainer -->
+    <div class="containerScoreBoard">
         <div>
             <img src="assets/images/comic-dante.jpeg" alt="assets/images/serious-dante.png">
         </div>
         <div>
-            <h4>Press any key to start</h4>
-            <h4>Current name</h4>
-            <div></div>
-            <h5>selections left</h5>
-            <h5>wins</h5>
+            <h3>press any letter to start</h3>
+            <h5>USER WINS
+                <br><span id="userWinsSpan"></span>
+            </h5>
+            <h4>Current Name</h4>
+            <div id="currentName"></div>
+            <h5>REMAINING GUESSES
+                <br><span id="remainingGuessesSpan"></span></h5>
+            <h5>USED LETTERS
+                <br><span id="usedLettersSpan"></span>
+            </h5> 
         </div>
     </div>
 

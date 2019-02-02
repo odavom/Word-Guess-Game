@@ -1,4 +1,23 @@
+/* all items */
 * {
     margin: 0;
     padding: 0;
+}
+/* the title heading */
+.containerHeading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    resize: both;
+    overflow: auto;
+}
+/* content container */
+.containerScoreBoard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    resize: both;
+    overflow: auto; 
 }
