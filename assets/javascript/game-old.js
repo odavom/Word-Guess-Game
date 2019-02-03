@@ -1,14 +1,14 @@
 let guessedLetters = [];//characters user pressed
 let correctLetters = [];//corect answers
 let userWins = 0;
-let remainingGuesses = 10;
+let remainingGuesses = 12;
 let names = ['dante', 'virgil', 'beatrice', 'charon', 'minos', 'cerberus', 'plutus', 'phleygas', 'geryon', 'malebranche', 'malacoda', 'alichino', 'calcabrina', 'cagnazzo', 'libiocco', 'barbariccia', 'draghignazzo', 'circiatto','farfarello', 'rubicante', 'graffiacane', 'nimrod', 'briareus', 'ephialtes', 'antaneus', 'homer', 'horace', 'ovid', 'electra', 'hector', 'aeneas', 'camilla', 'lavinia', 'julia', 'marcia', 'cornelia', 'saladin', 'socrates', 'plato', 'aristotle', 'averroes', 'orpheus', 'linus', 'euclid', 'semiramis', 'cleopatra', 'helen', 'achilles', 'tristan', 'dido', 'ciacco', 'pasiphae', 'nessus', 'chiron', 'capaneus', 'jason', 'caiaphas', 'ulysses', 'diomedes', 'mohammed', 'myrrha','judas'];
-let randomName = ' ' 
+let randomName = ' '; 
 
 // this puts the value(s), set above, into the html doc
 document.getElementById('userWinsSpan').textContent = userWins
 document.getElementById('remainingGuessesSpan').textContent = remainingGuesses
-document.getElementById('currentName').textContent = randomName
+document.getElementById('currentNameDiv').textContent = randomName
 
 /* the function hiddenName takes the randomName value and puts it in the correctLetters array in the form of _ , for the total length of the randomName */
 function hiddenName() {
@@ -20,7 +20,7 @@ function hiddenName() {
    console.log(correctLetters)  
 
 // this puts the value of correct letters in the html doc 
-   document.getElementById('currentName').textContent = correctLetters.join(' ');
+   document.getElementById('currentNameDiv').textContent = correctLetters.join(' ');
 }
 
 /* this creates a function event where the key pressed is stored in the userGuess as lower case. If the remaining guesses does not equal 0. And if guessedLetters including the userGuess does not equal true then put the userGuess to used letters. And remaining guesses is decreased. */
@@ -60,7 +60,7 @@ function checkLetter(userGuess) {
         }
     }
         
-    document.getElementById('currentName').textContent = correctLetters.join(' ')
+    document.getElementById('currentNameDiv').textContent = correctLetters.join(' ')
 }
 hiddenName();
 // checkLetter();
@@ -71,3 +71,46 @@ function newGame(){
     //hiddengame &checkLetter
     //new game if 
 }
+
+
+
+
+
+
+let names = ['dante', 'virgil', 'beatrice', 'charon', 'minos', 'cerberus', 'plutus', 'phleygas', 'geryon', 'malebranche', 'malacoda', 'alichino', 'calcabrina', 'cagnazzo', 'libiocco', 'barbariccia', 'draghignazzo', 'circiatto','farfarello', 'rubicante', 'graffiacane', 'nimrod', 'briareus', 'ephialtes', 'antaneus', 'homer', 'horace', 'ovid', 'electra', 'hector', 'aeneas', 'camilla', 'lavinia', 'julia', 'marcia', 'cornelia', 'saladin', 'socrates', 'plato', 'aristotle', 'averroes', 'orpheus', 'linus', 'euclid', 'semiramis', 'cleopatra', 'helen', 'achilles', 'tristan', 'dido', 'ciacco', 'pasiphae', 'nessus', 'chiron', 'capaneus', 'jason', 'caiaphas', 'ulysses', 'diomedes', 'mohammed', 'myrrha','judas']; 
+
+let userGuesses = [];
+
+let usedLetters = [];
+
+let correctLetters = [];
+
+let userWins;
+
+let currentName = ' ';
+
+let remainingGuesses;
+
+document.getElementById('currentNameDiv').textContent = currentName
+document.getElementById('usedLettersSpan').textContent = usedLetters
+
+function startGame() {
+    userWins = 0;
+    remainingGuesses = 12;
+    currentName = names[Math.floor(Math.random() * names.length)];
+
+    for (i = 0; i < currentName.length; i++) {
+        correctLetters[i] = '__';
+    }
+
+    document.getElementById('currentNameDiv').textContent = correctLetters.join(' ');
+    document.getElementById('userWinsSpan').textContent = userWins;
+    document.getElementById('remainingGuessesSpan').textContent = remainingGuesses
+}
+startGame()
+
+
+
+
+
+
