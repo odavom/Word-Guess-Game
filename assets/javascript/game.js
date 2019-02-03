@@ -23,6 +23,21 @@ function hiddenName() {
    document.getElementById('currentNameDiv').textContent = correctLetters.join(' ');
 }
 
+/*the function checkLetter with the parameter of user guess. is put in a for loop to check it against the randomNames and if the user guess is equal in value and type to the randomNames correct letters is revealed in the html*/
+function checkLetter(userGuess) {
+   
+    for (i = 0; i < randomName.length; i++) {
+        if (userGuess === randomName[i]) {
+            correctLetters[i] = userGuess;
+            console.log(randomName)
+            console.log(correctLetters.join(' '))
+            console.log(correctLetters.join(' ') == randomName)
+        }
+    }
+        
+    document.getElementById('currentNameDiv').textContent = correctLetters.join(' ')
+}
+
 /* this creates a function event where the key pressed is stored in the userGuess as lower case. If the remaining guesses does not equal 0. And if guessedLetters including the userGuess does not equal true then put the userGuess to used letters. And remaining guesses is decreased. */
 document.onkeyup = function(event) {
     let userGuess = event.key.toLowerCase();
@@ -31,7 +46,7 @@ document.onkeyup = function(event) {
         if (userGuess.length > 1) {
             alert("you didn't press a letter. Instead you pressed " + userGuess)
         } else {  
-            if (guessedLetters.includes(userGuess) != true){
+            if (guessedLetters.includes(userGuess) != true) {
                 guessedLetters.push(userGuess);
                 remainingGuesses--;
                 document.getElementById('usedLettersSpan').textContent = guessedLetters;
@@ -48,26 +63,13 @@ document.onkeyup = function(event) {
         //hiddenName();
     }
 }
-/*then function checkLetter with the parameter of user guess. is put in a for loop to check it against the randomNames and if the user guess is equal in value and type to the randomNames correct letters is revealed in the html*/
-function checkLetter(userGuess) {
-   
-    for (i = 0; i < randomName.length; i++) {
-        if (userGuess === randomName[i]) {
-            correctLetters[i] = userGuess;
-            console.log(randomName)
-            console.log(correctLetters.join(' '))
-            console.log(correctLetters.join(' ') == randomName)
-        }
-    }
-        
-    document.getElementById('currentNameDiv').textContent = correctLetters.join(' ')
-}
-hiddenName();
-// checkLetter();
-function newGame(){
-    
 
-    //reset var;
-    //hiddengame &checkLetter
-    //new game if 
+function wins() {
+    userWins++;
+    if (correctLetters[i] === randomName) {
+        alert("you win")
+    }
 }
+
+hiddenName();
+wins();
